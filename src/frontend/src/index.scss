@@ -1,0 +1,196 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+html, body, #root, .root{
+    width: 100%;
+    height: 100%;
+}
+#App{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+header{
+    width: 100%;
+    height: 60px;
+    min-height: 60px;
+    max-height: 60px;
+    background-color: #222;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    user-select: none;
+    .headerArea{
+        width: 100px;
+    }
+    h1{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+.Content{
+    flex: 1;
+    height: calc(100% - 60px);
+    max-height: calc(100% - 60px);
+    .Box{
+        width: 80%;
+        height: 100%;
+        margin: auto;
+        border-left: 1px solid #00000046;
+        border-right: 1px solid #00000046;
+        .Messages{
+            width: 100%;
+            height: calc(100% - 100px);
+            min-height: calc(100% - 100px);
+            max-height: calc(100% - 100px);
+            padding: 2rem;
+            box-sizing: border-box;
+            overflow: auto;
+        }
+        .Inputs{
+            width: 100%;
+            height: 100px;
+            background-color: #222222A0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            .Text,
+            .Send{
+                height: 80%;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+            .Text{
+                width: calc(100% - 100px);
+                textarea{
+                    resize: none;
+                    width: 80%;
+                    height: 100%;
+                }
+            }
+            .Send{
+                width: 100px;
+                button{
+                    width: 80%;
+                    height: 80%;
+                    border-radius: 1rem;
+                    background-color: #668bfb;
+                    cursor: pointer;
+                    border: 0;
+                    color: #fff;
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
+
+input,
+textarea{
+    border-radius: 1rem;
+    box-shadow: 0 0 0.2rem #00000046;
+    outline: 0;
+    border: 1px solid #00000046;
+    box-sizing: border-box;
+    padding: 0.5rem 1rem;
+    font-size: 1.05rem;
+    display: block;
+    width: 100%;
+}
+button{
+    border: 1px solid #00000090;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+label{
+    display: block;
+    width: 100%;
+}
+
+.FormElement{
+    margin-bottom: 1.25rem;
+}
+
+.Message{
+    width: 40%;
+    background-color: #668bfb46;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    &.Self{
+        margin-left: auto;
+    }
+    &.Other{
+        margin-right: auto;
+    }
+    .Author{
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+        &::after{
+            content: ':';
+        }
+    }
+}
+
+.Guest{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    .TabArea{
+        width: 400px;
+        height: 400px;
+        box-shadow: 0 0 0.3rem #00000046;
+        border-radius: 1rem;
+        .tabs{
+            width: 100%;
+            height: 60px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            font-size: 1.1rem;
+            cursor: pointer;
+            .tab{
+                font-weight: normal;
+                transition: all 130ms;
+                padding: 1rem;
+                box-sizing: border-box;
+                background-color: #00000016;
+                border-radius: 1rem;
+                &.active{
+                    font-weight: bold;
+                }
+            }
+        }
+        .panel{
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            padding: 1rem;
+            box-sizing: border-box;
+            h2,
+            h3{
+                text-align: center;
+                user-select: none;
+            }
+        }
+    }
+}
